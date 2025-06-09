@@ -145,66 +145,47 @@ export default function Home() {
                       <Typography variant="h6" fontWeight="bold">
                         Content Calendar
                       </Typography>
-                      <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-                        <Box sx={{ display: "flex" }}>
-                          {["S", "M", "T", "W", "T", "F", "S"].map((day, index) => (
-                            <Typography
-                              key={`day-${index}`}
-                              variant="caption"
-                              sx={{
-                                width: 24,
-                                textAlign: "center",
-                                fontWeight: "medium",
-                                color: "text.secondary",
-                              }}
-                            >
-                              {day}
-                            </Typography>
-                          ))}
-                        </Box>
-                        <CalendarMonth color="primary" />
-                      </Box>
+                      <CalendarMonth color="primary" />
                     </Box>
                     <Box
                       sx={{
-                        display: "flex",
-                        flexWrap: "wrap",
+                        display: "grid",
+                        gridTemplateColumns: "repeat(7, 1fr)",
                         gap: 1,
+                        mb: 2
                       }}
                     >
                       {["S", "M", "T", "W", "T", "F", "S"].map((day, index) => (
-                        <Box
-                          key={`calendar-day-${index}`} 
+                        <Typography
+                          key={`day-${index}`}
+                          variant="caption"
                           sx={{
-                            flex: "1 0 calc(100% / 7)",
-                            minWidth: 0,
+                            textAlign: "center",
+                            fontWeight: "medium",
+                            color: "text.secondary",
                           }}
                         >
-                          <Typography
-                            variant="caption"
-                            sx={{
-                              display: "block",
-                              textAlign: "center",
-                              fontWeight: "medium",
-                              color: "text.secondary",
-                              p: 1,
-                            }}
-                          >
-                            {day}
-                          </Typography>
-                        </Box>
+                          {day}
+                        </Typography>
                       ))}
-                      {Array.from({ length: 35 }, (_, i) => {
-                        // Create deterministic patterns instead of random
+                    </Box>
+                    <Box
+                      sx={{
+                        display: "grid",
+                        gridTemplateColumns: "repeat(7, 1fr)",
+                        gap: 1,
+                      }}
+                    >
+                      
+                      {Array.from({ length: 42 }, (_, i) => {
                         const isWeekend = i % 7 === 0 || i % 7 === 6;
-                        const hasContent = (i % 3 === 0 && !isWeekend); // Deterministic pattern for content
+                        const hasContent = (i % 3 === 0 && !isWeekend);
 
                         return (
+                          
                           <Box
-                            key={i}
+                            key={`cell-${i}`}
                             sx={{
-                              flex: "1 0 calc(100% / 7)",
-                              minWidth: 0,
                               aspectRatio: "1",
                               borderRadius: 0.5,
                               bgcolor: isWeekend 
@@ -225,6 +206,7 @@ export default function Home() {
                         );
                       })}
                     </Box>
+                    
                   </CardContent>
                 </Card>
               </Box>

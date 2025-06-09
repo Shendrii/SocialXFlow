@@ -2,8 +2,10 @@
 
 import Link from "next/link"
 import { Box, Container, Typography, Button, Card, CardContent, AppBar, Toolbar, Stack, ThemeProvider } from "@mui/material"
-import { ArrowForward, CalendarMonth, BarChart, People, Bolt, Security, Language } from "@mui/icons-material"
+import { ArrowForward, CalendarMonth, BarChart, People, Bolt, Security, Language, Facebook, Instagram, LinkedIn, YouTube, X as XIcon } from "@mui/icons-material"
 import { createTheme } from '@mui/material/styles'
+import Image from "next/image"
+import { SocialIcon } from 'react-social-icons';
 
 const theme = createTheme()
 
@@ -334,31 +336,58 @@ export default function Home() {
               sx={{
                 display: "flex",
                 flexWrap: "wrap",
-                gap: 4,
+                gap: 10,  // Increased gap for better spacing
                 justifyContent: "center",
+                alignItems: "center", // Added to ensure vertical alignment
               }}
             >
               {[
-                { name: "Facebook", color: "#1877F2" },
-                { name: "Instagram", color: "#E4405F" },
-                { name: "Twitter", color: "#1DA1F2" },
-                { name: "LinkedIn", color: "#0A66C2" },
-                { name: "TikTok", color: "#000000" },
-                { name: "YouTube", color: "#FF0000" },
+                { 
+                  name: "Facebook", 
+                  color: "#1877F2",
+                  url: "https://facebook.com"
+                },
+                { 
+                  name: "Instagram", 
+                  color: "#E4405F",
+                  url: "https://instagram.com"
+                },
+                { 
+                  name: "X", 
+                  color: "#000000",
+                  url: "https://x.com"
+                },
+                { 
+                  name: "LinkedIn", 
+                  color: "#0A66C2",
+                  url: "https://linkedin.com"
+                },
+                { 
+                  name: "TikTok", 
+                  color: "#000000",
+                  url: "https://tiktok.com"
+                },
+                { 
+                  name: "YouTube", 
+                  color: "#FF0000",
+                  url: "https://youtube.com"
+                },
               ].map((platform) => (
                 <Box
                   key={platform.name}
                   sx={{
-                    flex: { xs: "1 0 50%", sm: "1 0 33.333%", md: "1 0 16.666%" },
-                    minWidth: 0,
-                    maxWidth: { xs: "50%", sm: "33.333%", md: "16.666%" },
+                    flex: { 
+                      xs: "1 0 calc(50% - 16px)", 
+                      sm: "1 0 calc(33.333% - 16px)", 
+                      md: "0 0 auto"  // Changed to auto to prevent wrapping on large screens
+                    },
                     textAlign: "center",
                   }}
                 >
                   <Box
                     sx={{
-                      width: 64,
-                      height: 64,
+                      width: 80,
+                      height: 80,
                       bgcolor: platform.color,
                       borderRadius: 3,
                       display: "flex",
@@ -368,9 +397,12 @@ export default function Home() {
                       mx: "auto",
                     }}
                   >
-                    <Typography variant="h6" sx={{ color: "white", fontWeight: "bold" }}>
-                      {platform.name[0]}
-                    </Typography>
+                    <SocialIcon 
+                      url={platform.url}
+                      style={{ width: 48, height: 48 }}
+                      bgColor="transparent"
+                      fgColor="white"
+                    />
                   </Box>
                   <Typography variant="body2" fontWeight="medium">
                     {platform.name}

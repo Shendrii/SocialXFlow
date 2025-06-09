@@ -143,7 +143,7 @@ export default function Home() {
                   <CardContent sx={{ p: 3 }}>
                     <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", mb: 3 }}>
                       <Typography variant="h6" fontWeight="bold">
-                        Content Calendar
+                        Calendar
                       </Typography>
                       <CalendarMonth color="primary" />
                     </Box>

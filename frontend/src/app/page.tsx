@@ -36,26 +36,23 @@ export default function Home() {
             </Box>
 
             <Stack direction="row" spacing={3} sx={{ display: { xs: "none", md: "flex" } }}>
-              <Link href="/features" style={{ textDecoration: "none" }}>
-                <Typography variant="body2" sx={{ color: "text.primary", "&:hover": { color: "primary.main" } }}>
-                  Features
-                </Typography>
-              </Link>
-              <Link href="/pricing" style={{ textDecoration: "none" }}>
-                <Typography variant="body2" sx={{ color: "text.primary", "&:hover": { color: "primary.main" } }}>
-                  Pricing
-                </Typography>
-              </Link>
-              <Link href="/integrations" style={{ textDecoration: "none" }}>
-                <Typography variant="body2" sx={{ color: "text.primary", "&:hover": { color: "primary.main" } }}>
-                  Integrations
-                </Typography>
-              </Link>
+      
               <Link href="/about" style={{ textDecoration: "none" }}>
                 <Typography variant="body2" sx={{ color: "text.primary", "&:hover": { color: "primary.main" } }}>
                   About
                 </Typography>
               </Link>
+              <Link href="/about" style={{ textDecoration: "none" }}>
+                <Typography variant="body2" sx={{ color: "text.primary", "&:hover": { color: "primary.main" } }}>
+                  Analytics
+                </Typography>
+              </Link>
+              <Link href="/about" style={{ textDecoration: "none" }}>
+                <Typography variant="body2" sx={{ color: "text.primary", "&:hover": { color: "primary.main" } }}>
+                  Social Media Management
+                </Typography>
+              </Link>
+            
             </Stack>
 
             <Stack direction="row" spacing={2}>
@@ -450,7 +447,7 @@ export default function Home() {
               {[
                 {
                   title: "Product",
-                  links: ["Features", "Pricing", "Integrations", "API"],
+                  links: ["Features", "Integrations", "API"],
                 },
                 {
                   title: "Company",

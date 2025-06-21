@@ -115,7 +115,7 @@ export default function SignupPage() {
           >
             {/* Form Section */}
             <Box sx={{ flex: 1, minWidth: 0, maxWidth: { lg: "60%" } }}>
-              <Card sx={{ boxShadow: 4 }}>
+              <Card sx={{ boxShadow: 4 }}>                    
                 <CardContent sx={{ p: 4 }}>
                   <Typography variant="h4" fontWeight="bold" gutterBottom>
                     Create Your Account

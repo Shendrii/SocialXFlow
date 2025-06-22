@@ -1,17 +1,4 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import ClientLayout from "./ClientLayout";
-import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "SocialXFlow - Automate Your Social Media Marketing",
@@ -31,23 +18,4 @@ export const metadata: Metadata = {
     title: "SocialXFlow - Automate Your Social Media Marketing",
     description: "Schedule, publish, and analyze your social media content across all platforms with AI-powered automation.",
   },
-};
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en">
-      <body
-        suppressHydrationWarning={true}
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <ClientLayout>
-          {children}
-        </ClientLayout>
-      </body>
-    </html>
-  );
-}
+}; 

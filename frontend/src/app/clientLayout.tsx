@@ -181,8 +181,9 @@ function Header({ drawerOpen, setDrawerOpen }: {
             color="inherit"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2 }}
+            sx={{ mr: 2, color: "black" }}
             aria-label="open drawer"
+
           >
             <MenuIcon />
           </IconButton>
